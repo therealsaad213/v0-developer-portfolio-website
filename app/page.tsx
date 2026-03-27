@@ -1,0 +1,31 @@
+'use client';
+
+import { Navbar } from '@/components/navbar';
+import { Hero } from '@/components/hero';
+import { About } from '@/components/about';
+import { Skills } from '@/components/skills';
+import { Experience } from '@/components/experience';
+import { Projects } from '@/components/projects';
+import { Contact } from '@/components/contact';
+import { Footer } from '@/components/footer';
+import { ScrollProgress } from '@/components/scroll-progress';
+import { CursorGlow } from '@/components/cursor-glow';
+import { Toaster } from 'sonner';
+
+export default function Home() {
+  return (
+    <main className="bg-slate-950 text-slate-50 overflow-x-hidden">
+      <ScrollProgress />
+      <CursorGlow />
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Contact />
+      <Footer />
+      <Toaster position="bottom-right" />
+    </main>
+  );
+}
