@@ -2,39 +2,37 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from '@/lib/use-intersection-observer';
+import { Code2, Database, Zap } from 'lucide-react';
+
+const skillCategories = [
+  {
+    name: 'Languages',
+    icon: Code2,
+    color: 'from-blue-500 to-cyan-500',
+    skills: ['C', 'C++', 'Python', 'Core Java', 'JavaScript', 'TypeScript']
+  },
+  {
+    name: 'Frontend',
+    icon: Zap,
+    color: 'from-purple-500 to-pink-500',
+    skills: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Framer Motion']
+  },
+  {
+    name: 'Backend & Database',
+    icon: Database,
+    color: 'from-green-500 to-emerald-500',
+    skills: ['Node.js', 'Express.js', 'Firebase', 'Supabase', 'MongoDB', 'PostgreSQL']
+  },
+  {
+    name: 'Mobile & Extra',
+    icon: Code2,
+    color: 'from-orange-500 to-red-500',
+    skills: ['Flutter', 'REST APIs', 'Git', 'GitHub', 'Vercel', 'Web3 Basics']
+  }
+];
 
 export function Skills() {
-  const { ref, inView } = useInView({ threshold: 0.3 });
-
-  const skillCategories = [
-    {
-      category: 'Frontend',
-      skills: [
-        { name: 'React.js', proficiency: 95 },
-        { name: 'Next.js', proficiency: 90 },
-        { name: 'Tailwind CSS', proficiency: 95 },
-        { name: 'Framer Motion', proficiency: 85 },
-      ],
-    },
-    {
-      category: 'Backend',
-      skills: [
-        { name: 'Node.js', proficiency: 90 },
-        { name: 'Express.js', proficiency: 88 },
-        { name: 'Firebase', proficiency: 92 },
-        { name: 'RESTful APIs', proficiency: 90 },
-      ],
-    },
-    {
-      category: 'Tools & Platforms',
-      skills: [
-        { name: 'Git & GitHub', proficiency: 92 },
-        { name: 'Docker', proficiency: 80 },
-        { name: 'MongoDB', proficiency: 85 },
-        { name: 'PostgreSQL', proficiency: 83 },
-      ],
-    },
-  ];
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,91 +40,129 @@ export function Skills() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      opacity: 1,
+      transition: { duration: 0.5, ease: 'easeOut' },
     },
   };
 
   return (
     <section
       ref={ref}
-      className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden"
       id="skills"
+      className="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-50/20 dark:via-purple-950/10 to-transparent"
     >
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.8 }}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
-      </motion.div>
-
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Skills & Expertise
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            My <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">Skill Stack</span>
           </h2>
-          <p className="text-slate-400">Technologies I work with</p>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
+            A comprehensive toolkit built through hands-on development, combining frontend magic with robust backend architecture.
+          </p>
         </motion.div>
 
+        {/* Skills Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8"
         >
-          {skillCategories.map((category, categoryIdx) => (
-            <motion.div
-              key={categoryIdx}
-              variants={itemVariants}
-              className="group rounded-xl border border-cyan-400/20 bg-gradient-to-br from-slate-900/50 to-purple-900/20 p-6 backdrop-blur-md hover:border-cyan-400/50 transition-all duration-300"
-            >
-              <h3 className="text-xl font-bold text-cyan-300 mb-6 group-hover:text-cyan-200 transition-colors">
-                {category.category}
-              </h3>
-              <div className="space-y-5">
-                {category.skills.map((skill, skillIdx) => (
+          {skillCategories.map((category) => {
+            const Icon = category.icon;
+            return (
+              <motion.div
+                key={category.name}
+                variants={itemVariants}
+                className="group"
+              >
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)' }}
+                  className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-blue-500 dark:hover:border-cyan-400 hover:shadow-xl dark:hover:shadow-none relative overflow-hidden"
+                >
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3 mb-6 relative z-10">
+                    <motion.div
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      className={`p-3 rounded-lg bg-gradient-to-br ${category.color} text-white`}
+                    >
+                      <Icon size={24} />
+                    </motion.div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                      {category.name}
+                    </h3>
+                  </div>
+
+                  {/* Skills Tags */}
+                  <div className="flex flex-wrap gap-3 relative z-10">
+                    {category.skills.map((skill, index) => (
+                      <motion.button
+                        key={skill}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        transition={{ delay: index * 0.05 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r ${category.color} text-white shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20`}
+                      >
+                        {skill}
+                      </motion.button>
+                    ))}
+                  </div>
+
+                  {/* Decorative Glow */}
                   <motion.div
-                    key={skillIdx}
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: categoryIdx * 0.2 + skillIdx * 0.1 }}
-                  >
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-300">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-purple-300">
-                        {skill.proficiency}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.proficiency}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: categoryIdx * 0.2 + skillIdx * 0.1 }}
-                        className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className={`absolute -top-1/2 -right-1/2 w-96 h-96 bg-gradient-to-br ${category.color} rounded-full blur-3xl opacity-10 pointer-events-none`}
+                  />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">
+            Always learning and exploring new technologies. Currently diving deep into advanced backend architecture and modern DevOps.
+          </p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
+          >
+            <a
+              href="https://github.com/therealsaad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-500 dark:to-blue-500 text-white font-semibold hover:shadow-lg dark:hover:shadow-cyan-500/50 transition-all hover:scale-105"
+            >
+              Explore My GitHub
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

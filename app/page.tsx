@@ -14,7 +14,7 @@ import { Toaster } from 'sonner';
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 text-slate-50 overflow-x-hidden">
+    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 overflow-x-hidden transition-colors duration-300">
       <ScrollProgress />
       <CursorGlow />
       <Navbar />

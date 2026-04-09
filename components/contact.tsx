@@ -18,10 +18,9 @@ export function Contact() {
   });
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: '#', color: 'hover:text-slate-300' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#', color: 'hover:text-blue-400' },
-    { icon: Twitter, label: 'Twitter', href: '#', color: 'hover:text-cyan-400' },
-    { icon: Mail, label: 'Email', href: 'mailto:hello@example.com', color: 'hover:text-purple-400' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/therealsaad', color: 'hover:text-slate-700 dark:hover:text-slate-300' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/therealsaad/', color: 'hover:text-blue-600 dark:hover:text-blue-400' },
+    { icon: Mail, label: 'Email', href: 'mailto:therealsaad03@gmail.com', color: 'hover:text-red-600 dark:hover:text-red-400' },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

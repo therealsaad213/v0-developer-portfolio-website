@@ -10,52 +10,52 @@ export function Projects() {
 
   const projects = [
     {
-      title: 'AI Resume Analyzer SaaS',
-      description: 'Intelligent resume analysis platform powered by AI for job matching and improvement suggestions.',
-      tech: ['Next.js', 'Firebase', 'OpenAI API', 'Tailwind CSS'],
-      color: 'from-cyan-500 to-blue-500',
-      link: '#',
-      github: '#',
+      title: 'FunFarm - AI Farmhouse Booking',
+      description: 'AI-powered farmhouse discovery and booking platform with 156+ verified properties. Features intelligent recommendations, instant booking, advanced search filters, and real guest reviews. Integrated Stripe for seamless payments.',
+      tech: ['Next.js', 'React', 'Supabase', 'Stripe', 'Tailwind CSS'],
+      color: 'from-green-500 to-emerald-500',
+      link: 'https://farmbysaad.vercel.app/',
+      github: 'https://github.com/therealsaad',
     },
     {
-      title: 'Smart Expense Tracker',
-      description: 'Real-time expense tracking application with AI-powered categorization and analytics dashboard.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
+      title: 'Waafi Associates - B2B Platform',
+      description: 'Professional consulting and technology services platform. Built interior design consultancy, software development showcase, e-commerce solutions, and cyber security advisory. Responsive and modern design with service portfolio management.',
+      tech: ['React', 'Next.js', 'Supabase', 'Tailwind CSS', 'Framer Motion'],
+      color: 'from-blue-500 to-cyan-500',
+      link: 'https://waafiassociates.vercel.app/',
+      github: 'https://github.com/therealsaad',
+    },
+    {
+      title: 'E-Commerce Product Management',
+      description: 'Full-stack e-commerce platform with product catalog, shopping cart, checkout flow, and order management. Integrated payment processing and inventory tracking with real-time updates.',
+      tech: ['Next.js', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
       color: 'from-purple-500 to-pink-500',
       link: '#',
-      github: '#',
+      github: 'https://github.com/therealsaad',
     },
     {
-      title: 'Freelancer Collaboration Platform',
-      description: 'Decentralized marketplace connecting freelancers with clients for seamless project collaboration.',
-      tech: ['React', 'Express', 'Firebase Auth', 'Stripe'],
-      color: 'from-pink-500 to-rose-500',
-      link: '#',
-      github: '#',
-    },
-    {
-      title: '3D Portfolio Builder',
-      description: 'Interactive 3D portfolio creation tool with drag-and-drop components and real-time preview.',
-      tech: ['Three.js', 'React Three Fiber', 'Next.js', 'Framer Motion'],
-      color: 'from-green-500 to-emerald-500',
-      link: '#',
-      github: '#',
-    },
-    {
-      title: 'Crypto Trading Dashboard',
-      description: 'Real-time cryptocurrency trading dashboard with advanced charting and portfolio management.',
-      tech: ['React', 'WebSocket', 'Firebase', 'TradingView API'],
+      title: 'Real-Time Chat Application',
+      description: 'Developed a real-time messaging platform with user authentication, typing indicators, message history, and online status. Implemented WebSocket for instant communication.',
+      tech: ['React', 'Firebase', 'Socket.io', 'Redux', 'Material-UI'],
       color: 'from-orange-500 to-red-500',
       link: '#',
-      github: '#',
+      github: 'https://github.com/therealsaad',
     },
     {
-      title: 'Campus Event Management System',
-      description: 'Comprehensive event management platform for universities with ticketing and live updates.',
-      tech: ['Next.js', 'Firebase', 'Razorpay', 'Socket.io'],
+      title: 'Task Management Dashboard',
+      description: 'Personal productivity tool with task creation, categorization, priority levels, and progress tracking. Features drag-and-drop kanban board and real-time notifications.',
+      tech: ['React', 'Firebase', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
+      color: 'from-pink-500 to-rose-500',
+      link: '#',
+      github: 'https://github.com/therealsaad',
+    },
+    {
+      title: 'AI-Powered Content Generator',
+      description: 'SaaS tool for generating SEO-optimized content using AI. Built with temperature control, multiple content types, and copy-to-clipboard functionality with usage analytics.',
+      tech: ['Next.js', 'OpenAI API', 'Firebase', 'Tailwind CSS', 'Vercel'],
       color: 'from-indigo-500 to-purple-500',
       link: '#',
-      github: '#',
+      github: 'https://github.com/therealsaad',
     },
   ];
 
@@ -81,7 +81,7 @@ export function Projects() {
   return (
     <section
       ref={ref}
-      className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden"
+      className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-transparent via-purple-50/20 dark:via-purple-950/10 to-transparent"
       id="projects"
     >
       <motion.div
@@ -90,7 +90,7 @@ export function Projects() {
         transition={{ duration: 0.8 }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute top-20 right-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-3xl" />
       </motion.div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -100,10 +100,10 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <p className="text-slate-400">Building amazing digital products</p>
+          <p className="text-slate-600 dark:text-slate-400">Real-world applications and solutions</p>
         </motion.div>
 
         <motion.div
@@ -119,15 +119,15 @@ export function Projects() {
               className="group relative h-full"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-300`} />
-              <div className="relative rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/70 to-slate-800/70 p-6 backdrop-blur-md h-full flex flex-col hover:border-cyan-400/50 transition-all duration-300">
+              <div className="relative rounded-xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-gradient-to-br dark:from-slate-900/70 dark:to-slate-800/70 p-6 backdrop-blur-md h-full flex flex-col hover:border-blue-400 dark:hover:border-cyan-400/50 shadow-lg dark:shadow-none transition-all duration-300">
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-50/20 dark:from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative z-10 flex-1">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -137,24 +137,28 @@ export function Projects() {
                     {project.tech.map((tech, techIdx) => (
                       <span
                         key={techIdx}
-                        className="text-xs px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-medium"
+                        className="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-cyan-500/20 text-blue-700 dark:text-cyan-300 border border-blue-300 dark:border-cyan-500/30 font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-3 pt-4 border-t border-slate-700/50">
+                  <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-700/50">
                     <Link
                       href={project.link}
-                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-500 dark:to-blue-500 text-white text-sm font-semibold hover:shadow-lg dark:hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
                     </Link>
                     <Link
                       href={project.github}
-                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg border border-purple-500/50 text-purple-300 text-sm font-semibold hover:bg-purple-500/10 transition-all duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg border border-blue-300 dark:border-purple-500/50 text-blue-700 dark:text-purple-300 text-sm font-semibold hover:bg-blue-50 dark:hover:bg-purple-500/10 transition-all duration-300"
                     >
                       <Github className="w-4 h-4" />
                       Code
