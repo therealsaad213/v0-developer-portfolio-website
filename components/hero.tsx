@@ -69,10 +69,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-slate-900 dark:text-white leading-tight"
         >
-          I&apos;m <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent animate-pulse">Shaikh Saad</span> —
+          I&apos;m <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent animate-pulse">Shaikh Saad</span> 
           <br />
           <span className="text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
-            I turn ideas into modern web experiences.
+          
           </span>
         </motion.h1>
 
