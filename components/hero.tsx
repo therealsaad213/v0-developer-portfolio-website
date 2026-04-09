@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const roles = ['Full Stack Developer', 'Web Architect', 'Creative Technologist', 'Problem Solver'];
+const roles = ['Full Stack Developer', 'Web Architect', 'Creative Technologist', 'Problem Solver','UI/UX'];
 
 export function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -69,10 +69,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-slate-900 dark:text-white leading-tight"
         >
-          I&apos;m <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent animate-pulse">Shaikh Saad</span> —
-          <br />
+          I&apos;m <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent animate-pulse">Shaikh Saad</span>           <br />
           <span className="text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
-            I turn ideas into modern web experiences.
+            
           </span>
         </motion.h1>
 
@@ -85,9 +84,7 @@ export function Hero() {
           <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mb-3">
             Self-taught MERN stack developer building real-world projects and growing every day.
           </p>
-          <p className="text-base sm:text-lg text-purple-600 dark:text-purple-400 font-semibold italic">
-            Started from zero, now building my own path in tech.
-          </p>
+          
         </motion.div>
 
         <motion.div
