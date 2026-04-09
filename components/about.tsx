@@ -72,15 +72,15 @@ export function About() {
             
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 dark:from-cyan-300 to-cyan-600 dark:to-purple-300 bg-clip-text text-transparent mb-3">Developer Profile</h3>
-                <p className="text-slate-700 dark:text-slate-300 mb-4">
-                  Passionate about creating intuitive and performant web applications. Specialized in building scalable full-stack solutions with modern technologies and best practices.
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 dark:from-cyan-300 to-purple-600 dark:to-purple-300 bg-clip-text text-transparent mb-3">Who Am I?</h3>
+                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                  I&apos;m a self-taught developer who started from zero and fell in love with building things on the web. I love turning complex problems into simple, beautiful solutions. Currently deep-diving into the MERN stack, with a growing interest in cybersecurity and freelancing.
                 </p>
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-slate-600 dark:text-purple-300">📍 Based in India</p>
-                <p className="text-sm text-slate-600 dark:text-cyan-300">💼 Full Stack Developer</p>
-                <p className="text-sm text-slate-600 dark:text-pink-300">🚀 Available for opportunities</p>
+              <div className="space-y-3">
+                <p className="text-sm text-slate-600 dark:text-slate-300"><span className="font-semibold">Learning:</span> MERN Stack, Web3, System Design</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300"><span className="font-semibold">Interested in:</span> Cybersecurity, Freelancing, Building real products</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300"><span className="font-semibold">Based in:</span> India 🇮🇳</p>
               </div>
             </div>
           </motion.div>

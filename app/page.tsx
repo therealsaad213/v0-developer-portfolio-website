@@ -4,6 +4,7 @@ import { Navbar } from '@/components/navbar';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
 import { Skills } from '@/components/skills';
+import { CodingJourney } from '@/components/coding-journey';
 import { Experience } from '@/components/experience';
 import { Projects } from '@/components/projects';
 import { Contact } from '@/components/contact';
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <CodingJourney />
       <Experience />
       <Projects />
       <Contact />

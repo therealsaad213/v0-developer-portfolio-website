@@ -11,7 +11,10 @@ export function Projects() {
   const projects = [
     {
       title: 'FunFarm - AI Farmhouse Booking',
-      description: 'AI-powered farmhouse discovery and booking platform with 156+ verified properties. Features intelligent recommendations, instant booking, advanced search filters, and real guest reviews. Integrated Stripe for seamless payments.',
+      description: 'AI-powered farmhouse discovery and booking platform with 156+ verified properties.',
+      problem: 'Finding authentic farmhouses is hard, and most platforms lack personalized recommendations.',
+      solution: 'Built an intelligent recommendation engine that learns user preferences to suggest perfect getaways.',
+      learned: 'Advanced Supabase queries, payment integration with Stripe, and user behavior analysis.',
       tech: ['Next.js', 'React', 'Supabase', 'Stripe', 'Tailwind CSS'],
       color: 'from-green-500 to-emerald-500',
       link: 'https://farmbysaad.vercel.app/',
@@ -19,7 +22,10 @@ export function Projects() {
     },
     {
       title: 'Waafi Associates - B2B Platform',
-      description: 'Professional consulting and technology services platform. Built interior design consultancy, software development showcase, e-commerce solutions, and cyber security advisory. Responsive and modern design with service portfolio management.',
+      description: 'Professional consulting and technology services platform with multiple service offerings.',
+      problem: 'B2B service providers need a single platform to showcase diverse expertise and services.',
+      solution: 'Created an integrated B2B platform combining interior design, software dev, and cyber security services.',
+      learned: 'Building scalable multi-service platforms, complex state management, and professional UI design.',
       tech: ['React', 'Next.js', 'Supabase', 'Tailwind CSS', 'Framer Motion'],
       color: 'from-blue-500 to-cyan-500',
       link: 'https://waafiassociates.vercel.app/',
@@ -27,7 +33,10 @@ export function Projects() {
     },
     {
       title: 'E-Commerce Product Management',
-      description: 'Full-stack e-commerce platform with product catalog, shopping cart, checkout flow, and order management. Integrated payment processing and inventory tracking with real-time updates.',
+      description: 'Full-stack e-commerce platform with shopping cart, checkout, and inventory management.',
+      problem: 'Building an e-commerce store requires handling complex inventory and payment workflows.',
+      solution: 'Developed a robust system with real-time inventory tracking and secure payment processing.',
+      learned: 'Payment gateway integration, inventory management, order processing, and state synchronization.',
       tech: ['Next.js', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
       color: 'from-purple-500 to-pink-500',
       link: '#',
@@ -35,7 +44,10 @@ export function Projects() {
     },
     {
       title: 'Real-Time Chat Application',
-      description: 'Developed a real-time messaging platform with user authentication, typing indicators, message history, and online status. Implemented WebSocket for instant communication.',
+      description: 'Real-time messaging platform with instant notifications and presence awareness.',
+      problem: 'Users want instant communication with typing indicators and live online status.',
+      solution: 'Implemented WebSocket-based real-time communication with optimized data sync.',
+      learned: 'WebSocket implementation, real-time state management, and handling concurrent connections.',
       tech: ['React', 'Firebase', 'Socket.io', 'Redux', 'Material-UI'],
       color: 'from-orange-500 to-red-500',
       link: '#',
@@ -43,7 +55,10 @@ export function Projects() {
     },
     {
       title: 'Task Management Dashboard',
-      description: 'Personal productivity tool with task creation, categorization, priority levels, and progress tracking. Features drag-and-drop kanban board and real-time notifications.',
+      description: 'Personal productivity tool with kanban board and progress tracking.',
+      problem: 'Managing tasks across projects requires organization and real-time collaboration.',
+      solution: 'Built a drag-and-drop kanban board with instant syncing and notifications.',
+      learned: 'Drag-and-drop implementation, real-time database updates, and responsive animations.',
       tech: ['React', 'Firebase', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       color: 'from-pink-500 to-rose-500',
       link: '#',
@@ -51,7 +66,10 @@ export function Projects() {
     },
     {
       title: 'AI-Powered Content Generator',
-      description: 'SaaS tool for generating SEO-optimized content using AI. Built with temperature control, multiple content types, and copy-to-clipboard functionality with usage analytics.',
+      description: 'SaaS tool for generating SEO-optimized content with customizable parameters.',
+      problem: 'Creating SEO content manually is time-consuming and requires expertise.',
+      solution: 'Leveraged OpenAI API to create a smart content generator with custom controls.',
+      learned: 'AI API integration, prompt engineering, usage analytics, and SaaS architecture.',
       tech: ['Next.js', 'OpenAI API', 'Firebase', 'Tailwind CSS', 'Vercel'],
       color: 'from-indigo-500 to-purple-500',
       link: '#',
@@ -124,12 +142,27 @@ export function Projects() {
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-50/20 dark:from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative z-10 flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 text-xs mb-3 leading-relaxed">
                     {project.description}
                   </p>
+                  
+                  <div className="space-y-2 mb-4 text-xs">
+                    <div className="p-2 rounded bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
+                      <p className="font-semibold text-red-700 dark:text-red-400 mb-1">Problem</p>
+                      <p className="text-red-600 dark:text-red-300">{project.problem}</p>
+                    </div>
+                    <div className="p-2 rounded bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20">
+                      <p className="font-semibold text-green-700 dark:text-green-400 mb-1">Solution</p>
+                      <p className="text-green-600 dark:text-green-300">{project.solution}</p>
+                    </div>
+                    <div className="p-2 rounded bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20">
+                      <p className="font-semibold text-blue-700 dark:text-blue-400 mb-1">Learned</p>
+                      <p className="text-blue-600 dark:text-blue-300">{project.learned}</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="relative z-10 space-y-4">

@@ -56,7 +56,7 @@ export function Contact() {
   return (
     <section
       ref={ref}
-      className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden"
+      className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-transparent via-pink-50/20 dark:via-pink-950/10 to-transparent"
       id="contact"
     >
       <motion.div
@@ -65,7 +65,7 @@ export function Contact() {
         transition={{ duration: 0.8 }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute -bottom-40 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl" />
       </motion.div>
 
       <div className="relative z-10 max-w-3xl mx-auto">
@@ -75,10 +75,10 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Let&apos;s Connect
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+            Let&apos;s Work Together
           </h2>
-          <p className="text-slate-400">Got a project in mind? Let&apos;s talk!</p>
+          <p className="text-slate-600 dark:text-slate-400 text-lg">Have an idea or want to collaborate? I&apos;d love to hear from you. Drop me a message!</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -87,11 +87,11 @@ export function Contact() {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
-            className="rounded-xl border border-cyan-400/20 bg-gradient-to-br from-slate-900/50 to-purple-900/20 p-8 backdrop-blur-md"
+            className="rounded-xl border border-slate-200 dark:border-cyan-400/20 bg-white dark:bg-gradient-to-br dark:from-slate-900/50 dark:to-purple-900/20 p-8 backdrop-blur-md shadow-lg dark:shadow-none"
           >
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                   Name
                 </label>
                 <input
@@ -100,12 +100,12 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400/50 transition-colors"
+                  className="w-full px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700/50 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 dark:focus:border-cyan-400/50 transition-colors"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                   Email
                 </label>
                 <input
@@ -114,12 +114,12 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400/50 transition-colors"
+                  className="w-full px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700/50 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 dark:focus:border-cyan-400/50 transition-colors"
                   placeholder="your@email.com"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -128,7 +128,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 rounded-lg bg-slate-900/50 border border-slate-700/50 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
+                  className="w-full px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700/50 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 dark:focus:border-cyan-400/50 transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -137,7 +137,7 @@ export function Contact() {
                 whileTap={{ scale: 0.95 }}
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 text-white font-semibold flex items-center justify-center gap-2 hover:shadow-lg dark:hover:shadow-cyan-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" />
                 {isSubmitting ? 'Sending...' : 'Send Message'}

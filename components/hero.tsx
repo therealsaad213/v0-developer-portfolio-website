@@ -67,51 +67,52 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-slate-900 dark:text-white leading-tight"
         >
-          Shaikh Saad
+          I&apos;m <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-cyan-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent animate-pulse">Shaikh Saad</span> —
+          <br />
+          <span className="text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
+            I turn ideas into modern web experiences.
+          </span>
         </motion.h1>
 
         <motion.div
-          key={roleIndex}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.5 }}
-          className="h-12 mb-8"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-8"
         >
-          <p className="text-2xl sm:text-3xl bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent font-semibold">
-            {roles[roleIndex]}
+          <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mb-3">
+            Self-taught MERN stack developer building real-world projects and growing every day.
+          </p>
+          <p className="text-base sm:text-lg text-purple-600 dark:text-purple-400 font-semibold italic">
+            Started from zero, now building my own path in tech.
           </p>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          Crafting beautiful, scalable web applications with modern technologies. Specialized in Full-Stack development using React, Node.js, Next.js, and Firebase. Let&apos;s build something extraordinary together.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
         >
-          <Link
-            href="#projects"
-            className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-cyan-500 dark:to-blue-500 text-white font-semibold hover:shadow-lg dark:hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105"
-          >
-            View My Work
-          </Link>
-          <Link
-            href="#contact"
-            className="px-8 py-4 rounded-lg border-2 border-blue-600 dark:border-cyan-400 text-blue-600 dark:text-cyan-400 font-semibold hover:bg-blue-50 dark:hover:bg-cyan-500/10 transition-all duration-300"
-          >
-            Get In Touch
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="#projects"
+              className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 dark:from-cyan-500 dark:via-purple-500 dark:to-blue-500 text-white font-semibold hover:shadow-2xl hover:shadow-purple-500/50 dark:hover:shadow-cyan-500/50 transition-all duration-300 relative overflow-hidden group"
+            >
+              <span className="relative z-10">View My Work</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="#contact"
+              className="inline-block px-8 py-4 rounded-lg border-2 border-purple-600 dark:border-cyan-400 text-purple-600 dark:text-cyan-400 font-semibold hover:bg-purple-50 dark:hover:bg-cyan-500/10 transition-all duration-300 hover:scale-105"
+            >
+              Let&apos;s Connect
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Quick Links */}
