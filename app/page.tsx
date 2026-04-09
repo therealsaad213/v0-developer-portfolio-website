@@ -4,6 +4,7 @@ import { Navbar } from '@/components/navbar';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
 import { Skills } from '@/components/skills';
+import { CodingJourney } from '@/components/coding-journey';
 import { Experience } from '@/components/experience';
 import { Projects } from '@/components/projects';
 import { Contact } from '@/components/contact';
@@ -14,13 +15,14 @@ import { Toaster } from 'sonner';
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 text-slate-50 overflow-x-hidden">
+    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 overflow-x-hidden transition-colors duration-300">
       <ScrollProgress />
       <CursorGlow />
       <Navbar />
       <Hero />
       <About />
       <Skills />
+      <CodingJourney />
       <Experience />
       <Projects />
       <Contact />

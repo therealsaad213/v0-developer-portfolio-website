@@ -8,10 +8,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialIcons = [
-    { Icon: Github, href: '#', label: 'GitHub' },
-    { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { Icon: Twitter, href: '#', label: 'Twitter' },
-    { Icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
+    { Icon: Github, href: 'https://github.com/therealsaad', label: 'GitHub' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/in/therealsaad/', label: 'LinkedIn' },
+    { Icon: Mail, href: 'mailto:therealsaad03@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -19,35 +18,36 @@ export function Footer() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative border-t border-slate-800/50 bg-gradient-to-b from-slate-950 to-slate-900 py-12 px-4 sm:px-6 overflow-hidden"
+      className="relative border-t border-slate-200 dark:border-slate-800/50 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-900 py-12 px-4 sm:px-6 overflow-hidden transition-colors duration-300"
     >
       {/* Accent glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}>
             <Link href="#" className="flex items-center gap-2 group mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-bold text-white">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 dark:from-cyan-400 dark:to-purple-500 flex items-center justify-center font-bold text-white">
                 SS
               </div>
-              <span className="font-bold text-white group-hover:text-cyan-400 transition-colors">
+              <span className="font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                 Shaikh Saad
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
               Building exceptional digital experiences with modern technologies. Let&apos;s create something extraordinary together.
             </p>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <h3 className="font-bold text-white mb-4">Quick Links</h3>
+            <h3 className="font-bold text-slate-900 dark:text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {[
                 { label: 'About', href: '#about' },
                 { label: 'Skills', href: '#skills' },
+                { label: 'Journey', href: '#journey' },
                 { label: 'Experience', href: '#experience' },
                 { label: 'Projects', href: '#projects' },
                 { label: 'Contact', href: '#contact' },
@@ -55,7 +55,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                    className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                   >
                     {link.label}
                   </Link>
